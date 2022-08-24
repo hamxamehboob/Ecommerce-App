@@ -1,11 +1,9 @@
 
-import 'package:ecommerce_app/Screens/InformationScreen.dart';
-import 'package:ecommerce_app/Screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'Screens/ShippingInfo.dart';
-import 'Screens/SignupScreen.dart';
+import 'Screens/Home_Screen.dart';
 import 'Screens/SplashScreen.dart';
+
 
 void main() {
   runApp(const MyApp());

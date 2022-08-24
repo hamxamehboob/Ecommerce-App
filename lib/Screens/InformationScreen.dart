@@ -9,12 +9,13 @@ class info extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bottom = MediaQuery.of(context).viewInsets.bottom;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xFFF4F5F9),
+      backgroundColor: const Color(0xFFF4F5F9),
       appBar: AppBar(
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black,
           size: 23,
         ),
@@ -23,7 +24,7 @@ class info extends StatelessWidget {
         centerTitle: true,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
@@ -35,181 +36,186 @@ class info extends StatelessWidget {
               color: Colors.black),
         ),
       ),
-      body: Padding(
-          padding: const EdgeInsets.only(
-            top: 42,
-            left: 17,
-            right: 17,
-          ),
-          child: Container(
-              child: Column(children: [
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 17),
-                    hintText: "Name",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.asset("assets/images/profile_icon.png"),
-                    ),
-                    hintStyle:
-                        TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
-              ),
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Padding(
+            padding:  EdgeInsets.only(bottom: bottom,
+              top: 42,
+              left: 17,
+              right: 17,
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
+            child: Container(
+                child: Column(children: [
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
                     color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 17),
-                    hintText: "Email address",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Image.asset("assets/images/email_icon.png"),
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    hintStyle:
-                        const TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 17),
+                      hintText: "Name",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Image.asset("assets/images/profile_icon.png"),
+                      ),
+                      hintStyle:
+                          TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
                     color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 17),
-                    hintText: "Phone number",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.asset("assets/images/phone_icon.png"),
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    hintStyle:
-                        const TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 17),
+                      hintText: "Email address",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.only(left: 6),
+                        child: Image.asset("assets/images/email_icon.png"),
+                      ),
+                      hintStyle:
+                          const TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
                     color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 17),
-                    hintText: "Address",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Image.asset("assets/images/address_icon.png"),
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    hintStyle:
-                        TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 17),
+                      hintText: "Phone number",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Image.asset("assets/images/phone_icon.png"),
+                      ),
+                      hintStyle:
+                          const TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
                     color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 17),
-                    hintText: "Zip Code",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0),
-                      child: Image.asset("assets/images/zipcode_icon.png"),
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    hintStyle:
-                        TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 17),
+                      hintText: "Address",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Image.asset("assets/images/address_icon.png"),
+                      ),
+                      hintStyle:
+                          TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
                     color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 17),
-                    hintText: "City",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.asset("assets/images/city_icon.png"),
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    hintStyle:
-                        TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 17),
+                      hintText: "Zip Code",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
+                        child: Image.asset("assets/images/zipcode_icon.png"),
+                      ),
+                      hintStyle:
+                          TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
                     color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(5)),
-              child: TextField(
-                style: TextStyle(color: Colors.black, fontSize: 15),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 17),
-                    hintText: "Country",
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.asset("assets/images/country_icon.png"),
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    hintStyle:
-                        TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
-                    border: InputBorder.none),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 17),
+                      hintText: "City",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Image.asset("assets/images/city_icon.png"),
+                      ),
+                      hintStyle:
+                          TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
               ),
-            ),
-            SizedBox(height: 120),
-            AppButton(
-              label: "Next",onPress: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=> (shipInfo())));
-            }),
-          ]))),
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 17),
+                      hintText: "Country",
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Image.asset("assets/images/country_icon.png"),
+                      ),
+                      hintStyle:
+                          TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                      border: InputBorder.none),
+                ),
+              ),
+              SizedBox(height: 120),
+              AppButton(
+                  label: "Next",
+                  onPress: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => (shipInfo())));
+                  }),
+            ]))),
+      ),
     );
   }
 }
