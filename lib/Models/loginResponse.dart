@@ -1,14 +1,14 @@
 class LoginResponse {
   String? message;
   int? statusCode;
-  UserData? data;
+  LoginData? data;
 
   LoginResponse({this.message, this.statusCode, this.data});
 
   LoginResponse.fromJson(Map<String, dynamic> json) {
     message = json['message'];
     statusCode = json['statusCode'];
-    data = json['data'] != null ? new UserData.fromJson(json['data']) : null;
+    data = json['data'] != null ? new LoginData.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -22,16 +22,16 @@ class LoginResponse {
   }
 }
 
-class UserData {
+class LoginData {
   int? id;
   String? email;
   String? phone;
   String? password;
   String? accessToken;
 
-  UserData({this.id, this.email, this.phone, this.password, this.accessToken});
+  LoginData({this.id, this.email, this.phone, this.password, this.accessToken});
 
-  UserData.fromJson(Map<String, dynamic> json) {
+  LoginData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     email = json['email'];
     phone = json['phone'];
