@@ -269,6 +269,19 @@ class _loginState extends State<login> {
         'password': Passwordcontroller.text
       });
       var responseJSON = LoginResponse.fromJson(jsonDecode(response.body));
+      if(response.statusCode == 200){
+
+        print("Account Created Succesfully");
+
+        // print(categories![1].title ?? "".toString());
+        setState((){
+          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>HomeScreen()), (route) => false);
+        });
+      }
+      else
+        {
+          print("FAiled");
+        }
       setState(() {
         loginData = responseJSON.data;
       });
@@ -292,6 +305,7 @@ class _loginState extends State<login> {
       var responseJSON = AllCategoriesResponse.fromJson(jsonDecode(response.body));
       setState(() {
         categories = responseJSON.data;
+        print(categories![1].title.toString() );
       });
     } catch (e) {
       error = e.toString();

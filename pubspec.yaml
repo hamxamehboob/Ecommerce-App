@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,6 +76,8 @@ flutter:
       - assets/images/SignUp_image.png
       - assets/images/Search_icon.png
       - assets/images/HomeScreen_img.png
+      - assets/images/heart_icon.png
+      - assets/images/peach.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
