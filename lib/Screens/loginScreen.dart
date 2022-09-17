@@ -207,11 +207,8 @@ class _loginState extends State<login> {
                               const SizedBox(
                                 height: 17,
                               ),
-                              GestureDetector(
-                                onTap: onlogin,
-                                child:
-                                    AppButton(label: "Login", onPress: () {}),
-                              ),
+                                    AppButton(label: "Login", onPress: onlogin),
+
                               const SizedBox(
                                 height: 10,
                               ),

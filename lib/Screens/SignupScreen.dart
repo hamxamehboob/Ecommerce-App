@@ -176,13 +176,9 @@ class _SignupState extends State<Signup> {
                       const SizedBox(
                         height: 17,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => (HomeScreen())));
-                        },
-                        child: AppButton(label: "Signup", onPress: () {}),
-                      ),
+                      AppButton(label: "Signup", onPress: () {Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => (HomeScreen())));}),
+
                       const SizedBox(
                         height: 10,
                       ),
