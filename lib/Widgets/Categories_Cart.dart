@@ -10,8 +10,13 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
+
   @override
   Widget build(BuildContext context) {
+    var size,height,width;
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return Column(
       children: [
         Container(
@@ -67,7 +72,7 @@ class _CartState extends State<Cart> {
         ),
         SizedBox(height: 2,),
         Padding(
-          padding: const EdgeInsets.only(left:10,right: 10),
+          padding: const EdgeInsets.only(left:2,right: 2),
           child: Container(height: 26,
             color: Colors.white,
             child: Padding(
@@ -75,7 +80,7 @@ class _CartState extends State<Cart> {
               child: Row(
                 children: [
                   Icon(Icons.shopping_cart,color: Colors.green,size: 20,),
-                  SizedBox(width: 9,),
+                  SizedBox(width: 10,),
                   GestureDetector(
                     onTap: (){
                       Navigator.of(context).push(MaterialPageRoute(builder: (_) => ShopCart()));

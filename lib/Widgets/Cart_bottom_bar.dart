@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/Screens/InformationScreen.dart';
-import 'package:ecommerce_app/Screens/ShippingInfo.dart';
 import 'package:ecommerce_app/Widgets/AppButton.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +12,15 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
+    var size, height, width;
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return Container(
       height: 200,
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(top: 22,left: 17,right: 17),
+        padding: const EdgeInsets.only(top: 22, left: 17, right: 17),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -27,11 +30,13 @@ class _BottomBarState extends State<BottomBar> {
                 Text(
                   "Subtotal",
                   style: TextStyle(
-                  color: Color(0xFF868889),
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),
+                      color: Color(0xFF868889),
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
                 ),
-                SizedBox(width: 280,),
+                SizedBox(
+                  width: width / 1.4,
+                ),
                 Text(
                   "\$56.7",
                   style: TextStyle(
@@ -39,33 +44,42 @@ class _BottomBarState extends State<BottomBar> {
                       fontSize: 12,
                       fontWeight: FontWeight.bold),
                 ),
-
-
               ],
-
             ),
-        SizedBox(height:7 ,),
-        Row(
-          children: [
-            Text(
-              "Shipping charges",
-              style: TextStyle(
-                  color: Color(0xFF868889),
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),),
-            SizedBox(width: 232,),
-            Text(
-              "\$1.6",
-              style: TextStyle(
-                  color: Color(0xFF868889),
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),
+            SizedBox(
+              height: height / 70,
             ),
-          ],
-        ),
-            SizedBox(height: 20,),
-            Divider(thickness: 2,color: Color(0xFFEBEBEB),),
-            SizedBox(height: 10,),
+            Row(
+              children: [
+                Text(
+                  "Shipping charges",
+                  style: TextStyle(
+                      color: Color(0xFF868889),
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: width / 1.65,
+                ),
+                Text(
+                  "\$1.6",
+                  style: TextStyle(
+                      color: Color(0xFF868889),
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Divider(
+              thickness: 2,
+              color: Color(0xFFEBEBEB),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
                 Text(
@@ -75,7 +89,9 @@ class _BottomBarState extends State<BottomBar> {
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(width: 270,),
+                SizedBox(
+                  width: width / 1.56,
+                ),
                 Text(
                   "\$58.2",
                   style: TextStyle(
@@ -85,10 +101,15 @@ class _BottomBarState extends State<BottomBar> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
-            AppButton(label: "Checkout", onPress: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) => info()));
-            })
+            SizedBox(
+              height: 10,
+            ),
+            AppButton(
+                label: "Checkout",
+                onPress: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => info()));
+                })
           ],
         ),
       ),

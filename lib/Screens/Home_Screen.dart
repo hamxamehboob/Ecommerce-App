@@ -23,9 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
-    final double itemWidth = size.width / 2;
+    var size,height,width;
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return Scaffold(
       backgroundColor: Color(0xFFF4F5F9),
       resizeToAvoidBottomInset: false,
@@ -95,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 18,
                         fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(width: itemWidth),
+                  SizedBox(width: width/1.7),
                   Icon(
                     Icons.arrow_forward,
                     color: Color(0xFF868889),
@@ -103,16 +104,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               Container(
-                  height: itemHeight/3,
+                  height: height/7,
                   child: ListView.separated(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: 6,
                       separatorBuilder: (_, index) => SizedBox(
-                            width: itemWidth/21,
+                            width: width/50,
                           ),
                       itemBuilder: (_, index) => Image.asset('assets/images/peach.png'))),
-              SizedBox(height: itemHeight/10,),
+              SizedBox(height: height/20,),
               Row(
                 children: [
                   const Text(
@@ -132,9 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               GridView.count(
                 physics: ScrollPhysics(),
-                childAspectRatio: itemHeight / 500,
+                childAspectRatio: height / 1200,
                 crossAxisCount: 2,
-                crossAxisSpacing: itemWidth/itemHeight,
+                crossAxisSpacing: width/height,
                 shrinkWrap: true,
                 children: [
                   Cart(),Cart(),
