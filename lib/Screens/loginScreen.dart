@@ -243,7 +243,6 @@ class _loginState extends State<login> {
                             ])),
                       )
                     ],
-                    // if(loginData !=null ) Text(loginData?.accessToken?? "")
                   ]),
                 ),
               )

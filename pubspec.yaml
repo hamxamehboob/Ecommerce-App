@@ -66,7 +66,6 @@ flutter:
       - assets/images/Pic1.png
       - assets/images/Pic2.png
       - assets/images/Login_image.png
-      - assets/images/profile_icon.png
       - assets/images/email_icon.png
       - assets/images/phone_icon.png
       - assets/images/address_icon.png

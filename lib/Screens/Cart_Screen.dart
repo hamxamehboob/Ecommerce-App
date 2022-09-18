@@ -28,13 +28,12 @@ class _ShopCartState extends State<ShopCart> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFF4F5F9),
       body: Column(
-        children: [Expanded(flex: 5,child:  ListView.separated(
-            physics: NeverScrollableScrollPhysics(),
+        children: [Expanded(flex: 4,child:  ListView.separated(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             itemBuilder: (_, index) => CartWidget(),
             separatorBuilder: (_, index) => SizedBox(),
-            itemCount: 3),),
+            itemCount: 6),),
           BottomBar()
 
 
